@@ -182,8 +182,7 @@ $cmd
 singExit=$?
 
 if [[ $singExit -ne 0 ]]; then
-  echo "Container exited with non-zero code $singExit - this indicates a problem in the call to"
-  echo "'singularity run', such as invalid disk bindings"
+  echo "Container exited with non-zero code $singExit"
 fi
 
 if [[ $cleanup -eq 1 ]]; then
