@@ -22,8 +22,11 @@ function help() {
 
 Required args:
 
+  All paths should be absolute, on the local file system. They will be mounted inside the
+  container by the script.
+
   -i
-    Input absolute path to DWI data where /path/to/data/dwi.[nii.gz, bval, bvec] exists.
+    Input absolute path to DWI data, where /path/to/data/dwi.[nii.gz, bval, bvec] exists.
 
   -m
     Brain mask image.
@@ -48,11 +51,10 @@ Output:
 
 NODDI metrics computed via AMICO, and a pickle file produced by AMICO:
 
-  * FIT_ICVF.nii.gz
-  * FIT_OD.nii.gz
-  * FIT_ISOVF.nii.gz
-  * FIT_dir.nii.gz
-  * config.pickle
+  * FITxICVF.nii.gz
+  * FITxOD.nii.gz
+  * FITxISOVF.nii.gz
+  * FITxdir.nii.gz
 
 See README or container website for more information and citations
 
@@ -169,6 +171,7 @@ cmd="singularity run \
   --dwi-root /data/input/${inputFileRoot} \
   --brain-mask /data/mask/${maskFile} \
   --output-root /data/output/${outputFileRoot} \
+  --num-threads 1 \
   ${amicoUserArgs}
   "
 

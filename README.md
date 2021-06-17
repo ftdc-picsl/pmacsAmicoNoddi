@@ -24,38 +24,34 @@ where
 * A_{iso} - model of the isotropic signal
 * A_{icv} - model of the intracellular signal
 * A_{ecv} - model of the extracellular signal
-* V_{icv} - intracellular volume fraction (output as FIT_ICVF)
-* V_{iso} - isotropic volume fraction (output as FIT_ISOVF)
+* V_{icv} - intracellular volume fraction (output as FITxICVF)
+* V_{iso} - isotropic volume fraction (output as FITxISOVF)
 
-The other outputs discussed below, FIT_OD and FIT_dir, are additional parameters
+The other outputs discussed below, FITxOD and FITxdir, are additional parameters
 used to model A_{icv} and A_{ecv}.
 
 ## Output
 
 NODDI metrics computed via AMICO, and a pickle file produced by AMICO:
 
-FIT_ICVF.nii.gz - Relative intracellular volume fraction. Also called neurite
+FITxICVF.nii.gz - Relative intracellular volume fraction. Also called neurite
 density. It reflects the fraction of the non-isotropic signal that is estimated
 to be from intracellular diffusion inside neurites.
 
-FIT_OD.nii.gz - Neurite orientation dispersion about the estimated principal axis.
+FITxOD.nii.gz - Neurite orientation dispersion about the estimated principal axis.
 Normalized to be between 0 (parallel fibers) and 1 (random orientation).
 
-FIT_ISOVF.nii.gz - Isotropic volume fraction. This is the estimated fraction of
+FITxISOVF.nii.gz - Isotropic volume fraction. This is the estimated fraction of
 the voxel that is occupied by CSF.
 
-FIT_dir.nii.gz - Vector image containing the estimated principal neurite axis in
+FITxdir.nii.gz - Vector image containing the estimated principal neurite axis in
 each voxel.
-
-config.pickle - serialized object produced by AMICO.
 
 ## Citations
 
 Accelerated Microstructure Imaging via Convex Optimization (AMICO) from diffusion MRI data Alessandro Daducci, Erick Canales-Rodriguez, Hui Zhang, Tim Dyrby, Daniel C Alexander, Jean-Philippe Thiran NeuroImage 105, pp. 32-44 (2015)
 
 NODDI: practical in vivo neurite orientation dispersion and density imaging of the human brain Hui Zhang, Torben Schneider, Claudia A Wheeler-Kingshott, Daniel C Alexander NeuroImage. 16;61(4):1000-16 (2012)
-
-
 
 ## Container source
 
